@@ -1,0 +1,638 @@
+[
+    {
+        "name": "Apple",
+        "pinyin": "apple",
+        "letter": "A",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0021_140x56.jpg"
+    },
+    {
+        "name": "华为(HUAWEI)",
+        "pinyin": "huawei(huawei)",
+        "letter": "H",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0864_140x56.jpg"
+    },
+    {
+        "name": "小米(mi)",
+        "pinyin": "xiaomi(mi)",
+        "letter": "X",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0DER_140x56.jpg"
+    },
+    {
+        "name": "荣耀(honor)",
+        "pinyin": "rongyao(honor)",
+        "letter": "R",
+        "logo": "https://imgservice1.suning.cn/uimg1/pcms/newcatentries/unZTB3fQsLdKtE5lXhkvKA.jpg"
+    },
+    {
+        "name": "vivo",
+        "pinyin": "vivo",
+        "letter": "V",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/J675_140x56.jpg"
+    },
+    {
+        "name": "OPPO",
+        "pinyin": "oppo",
+        "letter": "O",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0115_140x56.jpg"
+    },
+    {
+        "name": "三星(SAMSUNG)",
+        "pinyin": "sanxing(samsung)",
+        "letter": "S",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1659_140x56.jpg"
+    },
+    {
+        "name": "诺基亚(NOKIA)",
+        "pinyin": "nuojiya(nokia)",
+        "letter": "N",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1459_140x56.jpg"
+    },
+    {
+        "name": "魅族(MEIZU)",
+        "pinyin": "meizu(meizu)",
+        "letter": "M",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1389_140x56.jpg"
+    },
+    {
+        "name": "努比亚(nubia)",
+        "pinyin": "nubiya(nubia)",
+        "letter": "N",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/J667_140x56.jpg"
+    },
+    {
+        "name": "美图(Meitu)",
+        "pinyin": "meitu(meitu)",
+        "letter": "M",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0BEC_140x56.jpg"
+    },
+    {
+        "name": "飞利浦(Philips)",
+        "pinyin": "feilipu(philips)",
+        "letter": "F",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0611_140x56.jpg"
+    },
+    {
+        "name": "联想(Lenovo)",
+        "pinyin": "lianxiang(lenovo)",
+        "letter": "L",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1303_140x56.jpg"
+    },
+    {
+        "name": "守护宝",
+        "pinyin": "shouhubao",
+        "letter": "S",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/491S_140x56.jpg"
+    },
+    {
+        "name": "天语(K-Touch)",
+        "pinyin": "tianyu(k-touch)",
+        "letter": "T",
+        "logo": "https://imgservice1.suning.cn/uimg1/pcms/newcatentries/p_ijN7Ci32f_wlLfd8osjQ.jpg"
+    },
+    {
+        "name": "金立",
+        "pinyin": "jinli",
+        "letter": "J",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0995_140x56.jpg"
+    },
+    {
+        "name": "华硕(ASUS)",
+        "pinyin": "huashuo(asus)",
+        "letter": "H",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0860_140x56.jpg"
+    },
+    {
+        "name": "TCL",
+        "pinyin": "tcl",
+        "letter": "T",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0132_140x56.jpg"
+    },
+    {
+        "name": "中兴(ZTE)",
+        "pinyin": "zhongxing(zte)",
+        "letter": "Z",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/2342_140x56.jpg"
+    },
+    {
+        "name": "HTC",
+        "pinyin": "htc",
+        "letter": "H",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/6495_140x56.jpg"
+    },
+    {
+        "name": "锤子(Smartisan)",
+        "pinyin": "chuizi(smartisan)",
+        "letter": "C",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0O66_140x56.jpg"
+    },
+    {
+        "name": "酷派(Coolpad)",
+        "pinyin": "kupai(coolpad)",
+        "letter": "K",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1194_140x56.jpg"
+    },
+    {
+        "name": "一加",
+        "pinyin": "yijia",
+        "letter": "Y",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/3G49_140x56.jpg"
+    },
+    {
+        "name": "海尔(Haier)",
+        "pinyin": "haier(haier)",
+        "letter": "H",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0743_140x56.jpg"
+    },
+    {
+        "name": "摩托罗拉(MOTOROLA)",
+        "pinyin": "motuoluola(motorola)",
+        "letter": "M",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1426_140x56.jpg"
+    },
+    {
+        "name": "索野(SOYES)",
+        "pinyin": "suoye(soyes)",
+        "letter": "S",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/3Q19_140x56.jpg"
+    },
+    {
+        "name": "索爱(soaiy)",
+        "pinyin": "suoai(soaiy)",
+        "letter": "S",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1806_140x56.jpg"
+    },
+    {
+        "name": "纽曼(Newsmy)",
+        "pinyin": "niuman(newsmy)",
+        "letter": "N",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1454_140x56.jpg"
+    },
+    {
+        "name": "酷和(KUH)",
+        "pinyin": "kuhe(kuh)",
+        "letter": "K",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/29R0_140x56.jpg"
+    },
+    {
+        "name": "GOOGLE",
+        "pinyin": "google",
+        "letter": "G",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/2D62_140x56.jpg"
+    },
+    {
+        "name": "波导(BiRD)",
+        "pinyin": "bodao(bird)",
+        "letter": "B",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0386_140x56.jpg"
+    },
+    {
+        "name": "8848",
+        "pinyin": "8848",
+        "letter": "num",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/9A94_140x56.jpg"
+    },
+    {
+        "name": "长虹(CHANGHONG)",
+        "pinyin": "changhong(changhong)",
+        "letter": "C",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0415_140x56.jpg"
+    },
+    {
+        "name": "LG",
+        "pinyin": "lg",
+        "letter": "L",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0098_140x56.jpg"
+    },
+    {
+        "name": "黑莓(BLACKBERRY)",
+        "pinyin": "heimei(blackberry)",
+        "letter": "H",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/8416_140x56.jpg"
+    },
+    {
+        "name": "索尼(SONY)",
+        "pinyin": "suoni(sony)",
+        "letter": "S",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1813_140x56.jpg"
+    },
+    {
+        "name": "360",
+        "pinyin": "sanliuling",
+        "letter": "S",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/2A71_140x56.jpg"
+    },
+    {
+        "name": "乐视",
+        "pinyin": "leshi",
+        "letter": "L",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/8D78_140x56.jpg"
+    },
+    {
+        "name": "小辣椒",
+        "pinyin": "xiaolajiao",
+        "letter": "X",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/J787_140x56.jpg"
+    },
+    {
+        "name": "海信(Hisense)",
+        "pinyin": "haixin(hisense)",
+        "letter": "H",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0761_140x56.jpg"
+    },
+    {
+        "name": "奇酷(QIKU)",
+        "pinyin": "qiku(qiku)",
+        "letter": "Q",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/7M55_140x56.jpg"
+    },
+    {
+        "name": "朵唯(DOOV)",
+        "pinyin": "duowei(doov)",
+        "letter": "D",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/5753_140x56.jpg"
+    },
+    {
+        "name": "康佳(KONKA)",
+        "pinyin": "kangjia(konka)",
+        "letter": "K",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1120_140x56.jpg"
+    },
+    {
+        "name": "金柏利",
+        "pinyin": "jinboli",
+        "letter": "J",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/490K_140x56.jpg"
+    },
+    {
+        "name": "诺亚信(NOAIN)",
+        "pinyin": "nuoyaxin(noain)",
+        "letter": "N",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/5770_140x56.jpg"
+    },
+    {
+        "name": "AGM",
+        "pinyin": "agm",
+        "letter": "A",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/4H09_140x56.jpg"
+    },
+    {
+        "name": "大显(DAXIAN)",
+        "pinyin": "daxian(daxian)",
+        "letter": "D",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0491_140x56.jpg"
+    },
+    {
+        "name": "詹姆士",
+        "pinyin": "zhanmushi",
+        "letter": "Z",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/0ERK_140x56.jpg"
+    },
+    {
+        "name": "金圣达(GRSED)",
+        "pinyin": "jinshengda(grsed)",
+        "letter": "J",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/4P30_140x56.jpg"
+    },
+    {
+        "name": "锋达通(Fadar)",
+        "pinyin": "fengdatong(fadar)",
+        "letter": "F",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/4959_140x56.jpg"
+    },
+    {
+        "name": "21ke",
+        "pinyin": "21ke",
+        "letter": "num",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/10D0_140x56.jpg"
+    },
+    {
+        "name": "福中福(F-FOOK)",
+        "pinyin": "fuzhongfu(f-fook)",
+        "letter": "F",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/9908_140x56.jpg"
+    },
+    {
+        "name": "征服(CONQUEST)",
+        "pinyin": "zhengfu(conquest)",
+        "letter": "Z",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/9L38_140x56.jpg"
+    },
+    {
+        "name": "TONINO LAMBORGHINI",
+        "pinyin": "tonino lamborghini",
+        "letter": "T",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/G234_140x56.jpg"
+    },
+    {
+        "name": "硕尼姆(sonim)",
+        "pinyin": "shuonimu(sonim)",
+        "letter": "S",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/T660_140x56.jpg"
+    },
+    {
+        "name": "京立(Gineek)",
+        "pinyin": "jingli(gineek)",
+        "letter": "J",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/36O9_140x56.jpg"
+    },
+    {
+        "name": "誉品",
+        "pinyin": "yupin",
+        "letter": "Y",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/L422_140x56.jpg"
+    },
+    {
+        "name": "保千里",
+        "pinyin": "baoqianli",
+        "letter": "B",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/V909_140x56.jpg"
+    },
+    {
+        "name": "BIHEE",
+        "pinyin": "bihee",
+        "letter": "B",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/T015_140x56.jpg"
+    },
+    {
+        "name": "厘米(CM)",
+        "pinyin": "limi(cm)",
+        "letter": "L",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/429M_140x56.jpg"
+    },
+    {
+        "name": "优思",
+        "pinyin": "yousi",
+        "letter": "Y",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/7028_140x56.jpg"
+    },
+    {
+        "name": "南极星(E.XUN)",
+        "pinyin": "nanjixing(e.xun)",
+        "letter": "N",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/2W12_140x56.jpg"
+    },
+    {
+        "name": "艾尼卡(Anica)",
+        "pinyin": "ainika(anica)",
+        "letter": "A",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/44Q5_140x56.jpg"
+    },
+    {
+        "name": "小格雷",
+        "pinyin": "xiaogelei",
+        "letter": "X",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/26I8_140x56.jpg"
+    },
+    {
+        "name": "爱来福(ailyfu)",
+        "pinyin": "ailaifu(ailyfu)",
+        "letter": "A",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/210R_140x56.jpg"
+    },
+    {
+        "name": "weiimi",
+        "pinyin": "weiimi",
+        "letter": "W",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/348Y_140x56.jpg"
+    },
+    {
+        "name": "优米通达(uimcom)",
+        "pinyin": "youmitongda(uimcom)",
+        "letter": "Y",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1W07_140x56.jpg"
+    },
+    {
+        "name": "优购(UooGou)",
+        "pinyin": "yougou(uoogou)",
+        "letter": "Y",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/P738_140x56.jpg"
+    },
+    {
+        "name": "比酷(Coobe)",
+        "pinyin": "biku(coobe)",
+        "letter": "B",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/O492_140x56.jpg"
+    },
+    {
+        "name": "lephone",
+        "pinyin": "lephone",
+        "letter": "L",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/Z622_140x56.jpg"
+    },
+    {
+        "name": "楚格(MANN)",
+        "pinyin": "chuge(mann)",
+        "letter": "C",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/S051_140x56.jpg"
+    },
+    {
+        "name": "SUGAR",
+        "pinyin": "sugar",
+        "letter": "S",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/1U22_140x56.jpg"
+    },
+    {
+        "name": "克里特(KRETA)",
+        "pinyin": "kelite(kreta)",
+        "letter": "K",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/2U78_140x56.jpg"
+    },
+    {
+        "name": "万有(Wanyou)",
+        "pinyin": "wanyou(wanyou)",
+        "letter": "W",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/Z858_140x56.jpg"
+    },
+    {
+        "name": "迪沃(Devia)",
+        "pinyin": "diwo(devia)",
+        "letter": "D",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/C863_140x56.jpg"
+    },
+    {
+        "name": "海语(HAIYU)",
+        "pinyin": "haiyu(haiyu)",
+        "letter": "H",
+        "logo": "//image.suning.cn/uimg/pcms/brandLogo/55K9_140x56.jpg"
+    },
+    {
+        "name": "錘子",
+        "pinyin": "chuizi",
+        "letter": "C"
+    },
+    {
+        "name": "托尼洛·兰博基尼",
+        "pinyin": "tuoniluo·lanbojini",
+        "letter": "T"
+    },
+    {
+        "name": "努比亞",
+        "pinyin": "nubiya",
+        "letter": "N"
+    },
+    {
+        "name": "优它(YOUTA)",
+        "pinyin": "youta(youta)",
+        "letter": "Y"
+    },
+    {
+        "name": "创星(ATMAN)",
+        "pinyin": "chuangxing(atman)",
+        "letter": "C"
+    },
+    {
+        "name": "美图手机",
+        "pinyin": "meitushouji",
+        "letter": "M"
+    },
+    {
+        "name": "iPhone",
+        "pinyin": "iphone",
+        "letter": "I"
+    },
+    {
+        "name": "锐族",
+        "pinyin": "ruizu",
+        "letter": "R"
+    },
+    {
+        "name": "酷酷贝尔(COCOBEIR)",
+        "pinyin": "kukubeier(cocobeir)",
+        "letter": "K"
+    },
+    {
+        "name": "金伯利(JINBOLI)",
+        "pinyin": "jinboli(jinboli)",
+        "letter": "J"
+    },
+    {
+        "name": "青橙(Green Orange)",
+        "pinyin": "qingcheng(green orange)",
+        "letter": "Q"
+    },
+    {
+        "name": "MELROSE",
+        "pinyin": "melrose",
+        "letter": "M"
+    },
+    {
+        "name": "諾基亞",
+        "pinyin": "nuojiya",
+        "letter": "N"
+    },
+    {
+        "name": "艾尔酷(AIEK)",
+        "pinyin": "aierku(aiek)",
+        "letter": "A"
+    },
+    {
+        "name": "捷语",
+        "pinyin": "jieyu",
+        "letter": "J"
+    },
+    {
+        "name": "百立丰(lephone)",
+        "pinyin": "bailifeng(lephone)",
+        "letter": "B"
+    },
+    {
+        "name": "中天语(ZTG)",
+        "pinyin": "zhongtianyu(ztg)",
+        "letter": "Z"
+    },
+    {
+        "name": "FOODO",
+        "pinyin": "foodo",
+        "letter": "F"
+    },
+    {
+        "name": "纽万(NEWONE)",
+        "pinyin": "niuwan(newone)",
+        "letter": "N"
+    },
+    {
+        "name": "小米手机",
+        "pinyin": "xiaomishouji",
+        "letter": "X"
+    },
+    {
+        "name": "汇医通",
+        "pinyin": "huiyitong",
+        "letter": "H"
+    },
+    {
+        "name": "捷仕(JESY)",
+        "pinyin": "jieshi(jesy)",
+        "letter": "J"
+    },
+    {
+        "name": "MO",
+        "pinyin": "mo",
+        "letter": "M"
+    },
+    {
+        "name": "洪泰天晖(TT.ONE)",
+        "pinyin": "hongtaitianhui(tt.one)",
+        "letter": "H"
+    },
+    {
+        "name": "木糖醇(MuTuCu)",
+        "pinyin": "mutangchun(mutucu)",
+        "letter": "M"
+    },
+    {
+        "name": "吉客猫(Glocalme)",
+        "pinyin": "jikemao(glocalme)",
+        "letter": "J"
+    },
+    {
+        "name": "多亲(QIN)",
+        "pinyin": "duoqin(qin)",
+        "letter": "D"
+    },
+    {
+        "name": "邦华(BOWAY)",
+        "pinyin": "banghua(boway)",
+        "letter": "B"
+    },
+    {
+        "name": "索丹(suodan)",
+        "pinyin": "suodan(suodan)",
+        "letter": "S"
+    },
+    {
+        "name": "爱户外(ioutdoor)",
+        "pinyin": "aihuwai(ioutdoor)",
+        "letter": "A"
+    },
+    {
+        "name": "Coolpad酷派",
+        "pinyin": "coolpadkupai",
+        "letter": "C"
+    },
+    {
+        "name": "乐丰",
+        "pinyin": "lefeng",
+        "letter": "L"
+    },
+    {
+        "name": "纽曼",
+        "pinyin": "niuman",
+        "letter": "N"
+    },
+    {
+        "name": "红米",
+        "pinyin": "",
+        "letter": "num"
+    },
+    {
+        "name": "UNNO",
+        "pinyin": "unno",
+        "letter": "U"
+    },
+    {
+        "name": "独影天幕",
+        "pinyin": "duyingtianmu",
+        "letter": "D"
+    }
+]
