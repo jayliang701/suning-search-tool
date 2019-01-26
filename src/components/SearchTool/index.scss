@@ -6,6 +6,7 @@
     position: relative;
     background: #fff;
     border: solid 1px rgba(0,0,0,0.2);
+    padding: 14px 10px;
     box-sizing: border-box;
     font: 12px/1.5 arial,tahoma,'Microsoft YaHei';
 }
@@ -13,10 +14,11 @@
 .option-group {
     display: flex;
     width: 100%;
-    padding: 14px 10px;
+    // padding: 14px 10px;
 }
 
 .option-group-name {
+    padding-left: 10px;
     width: 110px;
     height: 100%;
     white-space: nowrap;
@@ -112,16 +114,17 @@
 .option-group-filter .option-container {
     position: relative;
     overflow: hidden;
-    min-height: 42px;
+    // min-height: 42px;
 }
 
 .option-group-filter .option-container.scroll-container {
-    max-height: 130px;
+    max-height: 110px;
+    margin-bottom: 10px;
 }
 
-.option-group-filter.expend .option-container.scroll-container {
+.option-group-filter .option-container.scroll-container.expand {
     margin: 20px 0;
-    max-height: 250px;
+    max-height: 240px !important;
     overflow: auto;
 }
 
@@ -156,14 +159,16 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-right: 30px;
 }
 
-.option-container .options .option-item.text-option-item:hover {
+.option-container .options .option-item.text-option-item .option-item-name:hover {
     color: #F60;
 }
 
 .option-container .options .option-item.text-option-item .option-item-wrapper {
     background: #fff;
+    display: flex;
 }
 
 .option-container .options .option-item.img-option-item {
@@ -176,7 +181,7 @@
     align-items: center;
 }
 
-.option-container .options .option-item-wrapper {
+.option-container .options .option-item.img-option-item .option-item-wrapper {
     width: 94%;
     height: 94%;
     position: absolute;
@@ -185,7 +190,7 @@
     background: transparent;
 }
 
-.option-container .options .option-item-wrapper img {
+.option-container .options .option-item.img-option-item .option-item-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -212,7 +217,7 @@
 }
 
 .option-container .options .option-item-name {
-    width: 100%;
+    // width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -225,11 +230,10 @@
     width: 16px;
     height: 16px;
     background: #F60;
-    border-radius: 50%;
     display: block;
     position: absolute;
-    right: -8px;
-    top: -8px;
+    right: 0;
+    top: 0;
     color: #fff;
     display: none;
 }
@@ -240,8 +244,36 @@
     margin-left: 1px;
     margin-top: 1px;
     display: block;
-    background: url(/static/img/icons/close.svg) center center no-repeat;
+    background: url(/static/img/icons/check.svg) center center no-repeat;
     background-size: cover;
+}
+
+.option-container .options .option-item .option-item-check {
+    // float: left;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    margin: 3px 0 3px 0;
+    overflow: hidden;
+    background: url(/static/img/icons.png) no-repeat -111px -232px;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    display: none;
+    clear: both;
+    content: '  ';
+}
+
+.option-container.expand .options .option-item .option-item-check {
+    display: block;
+}
+
+.option-container .options .option-item.text-option-item:hover .option-item-check{
+    border-color: #F60;
+}
+
+.option-container .options .option-item.text-option-item.selected .option-item-check{
+    border-color: #F60;
+    background-color: #F60;
 }
 
 .option-container .options .option-item.selected .close {
@@ -280,18 +312,18 @@
     position: absolute;
 }
 
-.option-group-filter.expend .more-tools .tool-btn.more-btn i {
+.option-group-filter.expand .more-tools .tool-btn.more-btn i {
     background-position: -39px -278px;
 }
 
-.option-group-filter .more-tools .tool-btn.multi-select-btn {
+.option-group-filter .multi-select-btn {
     background: #f6f6f6;
     border-radius: 1px;
     position: relative;
     padding: 0 18px 0 6px;
 }
 
-.option-group-filter .more-tools .tool-btn.multi-select-btn > i {
+.option-group-filter .multi-select-btn > i {
     position: absolute;
     right: 4px;
     top: 5px;
@@ -301,12 +333,23 @@
     height: 10px;
 }
 
+.option-group-filter .multi-select-btn:hover { 
+    background-color: #fff6e5; 
+    color: #F60; 
+}
+
+.option-group-filter .multi-select-btn:hover > i { 
+    background: url(/static/img/icons.png) no-repeat -181px -257px; 
+    width: 10px; 
+    height: 10px; 
+}
+
 .option-group-filter .selection-submit {
     position: relative;
     width: 100%;
     bottom: 0;
     left: 0;
-    // display: flex;
+    height: 24px;
 }
 
 .option-group-filter .item-btns .btn {
@@ -320,7 +363,7 @@
     border-radius: 2px;
     border: 1px solid;
     left: 50%;
-    top: -12px;
+    top: -2px;
     font-size: 11px;
 }
 
@@ -353,4 +396,166 @@
     background-color: #f6f6f6;
     color: #c5c5c5;
     cursor: default;
+}
+
+
+// tab option filter
+.option-container.tab-option-container {
+    overflow: visible;
+}
+
+.option-container.tab-option-container .option-wrapper {
+    overflow: visible;
+}
+
+.option-container.tab-option-container .options .option-item.text-option-item {
+    overflow: inherit;
+    margin-right: 54px;
+}
+
+.tab-option-container .option-item {
+    cursor: default !important;
+}
+
+.tab-option-container .option-item .option-item-wrapper {
+    cursor: pointer;
+}
+
+.tab-option-container .option-item .option-item-wrapper .icon-down {
+    display: inline-block;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    width: 9px;
+    height: 5px;
+    margin-top: -2px;
+    background: url(/static/img/icons.png) no-repeat -138px -279px;
+    transition: transform 0.4s cubic-bezier(0, 0.39, 0, 0.98);
+    transform: rotate(0deg);
+}
+
+.tab-option-container .option-item .option-item-wrapper-overlay {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    padding-right: 30px;
+    padding-left: 18px;
+    margin-left: -18px;
+    margin-top: -6px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    display: flex;
+    cursor: pointer;
+    border-bottom: none;
+    display: block;
+    background: #fff;
+}
+
+.tab-option-container .option-item:hover .option-item-wrapper-overlay {
+    border: 1px solid #F60;
+    border-bottom: none;
+    background: #fff;
+    margin-left: -19px;
+    margin-top: -7px;
+    z-index: 60;
+}
+
+.tab-option-container .option-item:hover .option-item-name {
+    color: #F60;
+}
+
+.tab-option-container .option-item .option-item-wrapper-overlay .icon-down {
+    display: inline-block;
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    width: 9px;
+    height: 5px;
+    margin-top: -2px;
+    background: url(/static/img/icons.png) no-repeat -138px -279px;
+    transition: transform 0.4s cubic-bezier(0, 0.39, 0, 0.98);
+    transform: rotate(0deg);
+}
+
+.tab-option-container .option-item:hover .icon-down {
+    background: url(/static/img/icons.png) no-repeat -100px -279px;
+    transition: transform 0.4s cubic-bezier(0, 0.39, 0, 0.98);
+    transform: rotate(-180deg);
+}
+
+.tab-option-container .option-item .option-tab-panel {
+    display: none;
+    position: absolute;
+    width: 1085px;
+    top: 29px;
+    left: -19px;
+    border: 1px solid #F60;
+    z-index: 50;
+    background-color: #fff;
+}
+
+.tab-option-container .option-item .option-tab-panel .option-tab-panel-wrapper {
+    padding: 15px 20px;
+    width: auto;
+    text-align: left;
+}
+
+.tab-option-container .option-item .option-tab-panel .option-tab-item {
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.tab-option-container .option-item .option-tab-panel .option-tab-item:hover {
+    color: #F60;
+}
+
+.tab-option-container .option-item:hover .option-tab-panel {
+    display: block;
+}
+
+.tab-option-container .option-tab-panel .multi-select-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    color: #666;
+}
+
+.tab-option-container .option-tab-item .tab-option-item-check {
+    // float: left;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    margin: 3px 0 3px 0;
+    overflow: hidden;
+    background: url(/static/img/icons.png) no-repeat -111px -232px;
+    width: 16px;
+    height: 16px;
+    margin-top: -1px;
+    margin-right: 5px;
+    display: none;
+    clear: both;
+    content: '  ';
+    vertical-align: middle;
+}
+
+.tab-option-container .option-item:hover .tab-option-item-check {
+    display: inline-block;
+}
+
+.tab-option-container .option-tab-item:hover .tab-option-item-check {
+    border-color: #F60;
+}
+
+.tab-option-container .option-tab-item.selected .tab-option-item-check {
+    border-color: #F60;
+    background-color: #F60;
+}
+
+.tab-option-container .option-tab-panel .selection-submit {
+    bottom: 4px;
+    height: 30px;
 }

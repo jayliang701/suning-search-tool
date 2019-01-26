@@ -10,19 +10,24 @@ export default class ImageOptionFilterPanel extends FilterPanel {
     }
 
     renderOptionBlock() {
+        const {
+            expandable,
+        } = this.props;
         const { 
             filteredData, 
             selectOptions,
+            expand,
         } = this.state;
 
         return (
-            <div className="option-container scroll-container">
+            <div className={`option-container img-option-container ${expandable ? 'scroll-container' : ''} ${expand ? 'expand' : ''}`}>
                 <div className="option-wrapper">
                     <ul className="options">
                         {
                             filteredData.map(item => {
+                                const checked = selectOptions[item.name];
                                 return (
-                                    <li key={item.name} className={`option-item img-option-item ${selectOptions[item.name] ? 'selected' : ''}`}
+                                    <li key={item.name} className={`option-item img-option-item ${checked ? 'selected' : ''}`}
                                         title={item.name} >
                                         <div className="option-item-frame"></div>
                                         <div className="option-item-wrapper" onClick={() => this.selectOption(item)}>

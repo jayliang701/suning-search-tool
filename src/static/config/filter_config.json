@@ -2,6 +2,7 @@
     {
         "key": "brand",
         "label": "品牌",
+        "keywordSearch": true,
         "letterSearch": true,
         "allowMultiSelect": true,
         "expandable": true,
@@ -646,8 +647,21 @@
         ]
     },
     {
+        "key": "type",
+        "label": "相关分类",
+        "keywordSearch": false,
+        "letterSearch": false,
+        "allowMultiSelect": false,
+        "expandable": false,
+        "data": [
+            { "name": "手机" },
+            { "name": "二手手机" }
+        ]
+    },
+    {
         "key": "network",
         "label": "网络制式",
+        "keywordSearch": false,
         "letterSearch": false,
         "allowMultiSelect": true,
         "expandable": false,
@@ -656,6 +670,73 @@
             { "name": "双卡双4G" },
             { "name": "双卡单4G" },
             { "name": "其他" }
+        ]
+    },
+    {
+        "key": "price",
+        "label": "价格",
+        "keywordSearch": false,
+        "letterSearch": false,
+        "allowMultiSelect": false,
+        "expandable": false,
+        "data": [
+            { "name": "0-500" },
+            { "name": "500-1000" },
+            { "name": "1000-1700" },
+            { "name": "1700-2800" },
+            { "name": "2800-4500" },
+            { "name": "4500-6000" },
+            { "name": "6000-7500" },
+            { "name": "7500以上" }
+        ]
+    },
+    {
+        "key": "screen",
+        "label": "屏幕尺寸",
+        "keywordSearch": false,
+        "letterSearch": false,
+        "allowMultiSelect": true,
+        "expandable": false,
+        "data": [
+            { "name": "6.1英寸以上" },
+            { "name": "5.6-6.0英寸" },
+            { "name": "5.5英寸" },
+            { "name": "5.1-5.4英寸" },
+            { "name": "5.0英寸" },
+            { "name": "4.6-4.9英寸" },
+            { "name": "4.0英寸及以下" }
+        ]
+    },
+    {
+        "key": "other",
+        "label": "其他选项",
+        "keywordSearch": false,
+        "letterSearch": false,
+        "allowMultiSelect": false,
+        "expandable": false,
+        "render": "tab",
+        "data": [
+            { 
+                "name": "选购热点",
+                "data": [
+                    { "name": "双卡双待" },
+                    { "name": "大屏手机" },
+                    { "name": "指纹识别" },
+                    { "name": "老人手机" },
+                    { "name": "女性手机" }
+                ] 
+            },
+            { 
+                "name": "运行内存" ,
+                "data": [
+                    { "name": "8GB" },
+                    { "name": "6GB" },
+                    { "name": "4GB" },
+                    { "name": "3GB" },
+                    { "name": "2GB" },
+                    { "name": "2GB以下" }
+                ] 
+            }
         ]
     }
 ]

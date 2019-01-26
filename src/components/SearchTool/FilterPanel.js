@@ -33,13 +33,14 @@ export const utils = {
     genLetters,
 };
 
-const DEFAULT_STATE = {
+export const DEFAULT_STATE = {
     selectedLetter: null,
     selectOptions: {},
     filteredData: null,
     keyword: '',
     data: null,
     expand: false,
+    isEmptySelected: true,
     selectionMode: SelectionMode.SINGLE,
 };
 
@@ -56,30 +57,53 @@ export default class FilterPanel extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.dataUpdated();
+    }
+
     componentWillReceiveProps(newProps) {
         let oldData = this.state.data;
         let newData = newProps.data;
         let state = {};
+        let func;
         if (JSON.stringify(oldData) !== JSON.stringify(newData)) {
             state = {
                 ...DEFAULT_STATE,
                 data: newData,
                 filteredData: newData,
             };
+            func = this.dataUpdated.bind(this);
         }
         if (this.props.letterSearch !== newProps.letterSearch) {
-            state.letters = genLetters();
+            state.letters = newProps.letterSearch ? genLetters() : null;
         }
         if (isEmpty(state)) return;
 
-        this.setState(state);
+        this.setState(state, func);
+    }
+
+    dataUpdated() {
+
+    }
+
+    clearFilter() {
+        const data = this.props.data || [];
+        this.setState({
+            ...DEFAULT_STATE,
+            data,
+            filteredData: data,
+        });
     }
 
     selectOption(item) {
         let { selectOptions, selectionMode } = this.state;
         const isSingleMode = selectionMode === SelectionMode.SINGLE;
         if (isSingleMode) {
-            selectOptions = {};
+
+            this.clearFilter();
+
+            let { onSelect } = this.props;
+            return onSelect && onSelect([ item ]);
         }
 
         const key = item.name;
@@ -92,10 +116,6 @@ export default class FilterPanel extends React.Component {
         this.setState({
             selectOptions,
             isEmptySelected,
-        }, () => {
-            if (isSingleMode) {
-                this.submitMultiSelect();
-            }
         });
     }
 
@@ -178,10 +198,14 @@ export default class FilterPanel extends React.Component {
         } = this.state;
         if (isEmptySelected) return;
 
+        this.clearFilter();
+
         let selecteds = toArray(selectOptions);
         
         let { onSelect } = this.props;
         onSelect && onSelect(selecteds);
+
+
     }
 
     renderOptionBlock() {
@@ -190,8 +214,10 @@ export default class FilterPanel extends React.Component {
 
     render() {
         const {
+            group,
             allowMultiSelect,
             expandable,
+            keywordSearch,
         } = this.props;
         const { 
             letters,
@@ -207,9 +233,9 @@ export default class FilterPanel extends React.Component {
         if (!filteredData) return null;
 
         return (
-            <div className={`option-group-filter ${expand ?  'expand' : ''}`}>
+            <div className={`option-group-filter ${group}-group ${expand ?  'expand' : ''}`}>
                 {
-                    expand ? 
+                    expand && keywordSearch ? 
                     <div className="option-filter-search">
                         <input type="text" placeholder="可搜拼音、汉字查找品牌" value={keyword} onChange={ evt => this.onFilterKeyword(evt.currentTarget.value) } />
                     </div> : null

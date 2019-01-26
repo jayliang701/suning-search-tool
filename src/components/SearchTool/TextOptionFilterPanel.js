@@ -10,22 +10,28 @@ export default class TextOptionFilterPanel extends FilterPanel {
     }
 
     renderOptionBlock() {
+        const {
+            expandable,
+        } = this.props;
         const { 
             filteredData, 
             selectOptions,
+            expand
         } = this.state;
 
         return (
-            <div className="option-container">
+            <div className={`option-container text-option-container ${expandable ? 'scroll-container' : ''} ${expand ? 'expand' : ''}`}>
                 <div className="option-wrapper">
                     <div className="options">
                         {
                             filteredData.map(item => {
+                                const checked = selectOptions[item.name];
                                 return (
-                                    <div key={item.name} className={`option-item text-option-item ${selectOptions[item.name] ? 'selected' : ''}`}
+                                    <div key={item.name} className={`option-item text-option-item ${checked ? 'selected' : ''}`}
                                         title={item.name} >
-                                        {item.name}
+                                        {/* <span className="check-placeholder"></span>{item.name} */}
                                         <div className="option-item-wrapper" onClick={() => this.selectOption(item)}>
+                                            <i className="option-item-check"></i>
                                             <span className="option-item-name">{item.name}</span>
                                         </div>
                                     </div>

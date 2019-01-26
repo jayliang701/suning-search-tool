@@ -5,20 +5,19 @@ import TextOptionFilterPanel from './TextOptionFilterPanel';
 import ImageOptionFilterPanel from './ImageOptionFilterPanel';
 
 import './index.scss';
+import TabOptionFilterPanel from './TabOptionFilterPanel';
 
 const RENDER_MODE = {
     TEXT: "text",
-    IMAGE: "img"
+    IMAGE: "img",
+    TAB: "tab"
 };
 
 class SearchTool extends React.Component {
 
     state = {
         config: [],
-        filter: {
-            keyword: '',
-            brands: [],
-        }
+        filter: {}
     };
 
     constructor(props) {
@@ -32,29 +31,50 @@ class SearchTool extends React.Component {
         });
     }
 
+    componentWillReceiveProps(newProps) {
+        this.setState({
+            filter: newProps.filter || {},
+        });
+    }
+
+    filterOptionChange(groupKey, selecteds) {
+
+        let { filter } = this.state;
+        filter = filter || {};
+        filter[groupKey] = selecteds;
+
+        this.setState({
+            filter
+        }, () => {
+            const { onSearch } = this.props;
+            onSearch && onSearch(filter);
+        });
+
+    }
+
     render() {
-        const { config } = this.state;
+        const { config, filter } = this.state;
 
         return (
             <div className="search-tool">
                 {
                     config.map(group => {
+                        if (filter[group.key]) return;
+
                         group.render = group.render || RENDER_MODE.TEXT;
 
                         let Panel = TextOptionFilterPanel;
                         if (group.render === RENDER_MODE.IMAGE) {
                             Panel = ImageOptionFilterPanel;
+                        } else if (group.render === RENDER_MODE.TAB) {
+                            Panel = TabOptionFilterPanel;
                         }
                         return (
                             <div key={group.key} className="option-group">
                                 <div className="option-group-name">
                                     <label>{group.label}</label>
                                 </div>
-                                <Panel
-                                    data={group.data}
-                                    allowMultiSelect={group.allowMultiSelect}
-                                    letterSearch={group.letterSearch}
-                                    expandable={group.expandable} />
+                                <Panel group={group.key} {...group} onSelect={ selecteds => this.filterOptionChange(group.key, selecteds) } />
                             </div>
                         );
                     })
