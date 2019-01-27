@@ -21,19 +21,24 @@ export default class TabOptionFilterPanel extends FilterPanel {
         }, 20);
     }
 
-    clearFilter() {
+    clearFilter(stopNotify) {
         const data = this.props.data || [];
         this.setState({
-            ...DEFAULT_STATE,
+            ...utils.cloneObject(DEFAULT_STATE),
             data,
             filteredData: data,
             tabOptionMultiSelect: {},
             selectedTabOptions: {},
             isEmptyTabOptionSelected: {},
+        }, () => {   
+            if (stopNotify) return;
+            const { onCollapse, group } = this.props;
+            onCollapse && onCollapse(this, group);
         });
     }
 
     componentWillUnmount() {
+        super.componentWillUnmount();
         clearTimeout(this.updateTimer);
     }
 
@@ -88,7 +93,7 @@ export default class TabOptionFilterPanel extends FilterPanel {
 
         this.clearFilter();
 
-        const { onSelect } = this.props;
+        const { onSelect, group } = this.props;
         const item = {
             ...tabItem,
             options: utils.toArray(selectedTabOptions[tabIndex] || {}),
@@ -97,7 +102,7 @@ export default class TabOptionFilterPanel extends FilterPanel {
 
         onSelect && onSelect([
             item
-        ]);
+        ], group);
     }
 
     updateLayout() {

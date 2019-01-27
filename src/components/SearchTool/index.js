@@ -15,6 +15,8 @@ const RENDER_MODE = {
 
 class SearchTool extends React.Component {
 
+    panels = {};
+
     state = {
         config: [],
         filter: {}
@@ -52,6 +54,26 @@ class SearchTool extends React.Component {
 
     }
 
+    onRegisterPanel(panel, groupKey) {
+        this.panels[groupKey] = panel;
+    }
+
+    onDisposePanel(panel, groupKey) {
+        delete this.panels[groupKey];
+    }
+
+    onPanelExpand(panel, groupKey) {
+        for (let key in this.panels) {
+            let p = this.panels[key];
+            if (key === groupKey) continue;
+            p.reset();
+        }
+    }
+
+    onPanelCollapse(panel, groupKey) {
+        
+    }
+
     render() {
         const { config, filter } = this.state;
 
@@ -74,7 +96,15 @@ class SearchTool extends React.Component {
                                 <div className="option-group-name">
                                     <label>{group.label}</label>
                                 </div>
-                                <Panel group={group.key} {...group} onSelect={ selecteds => this.filterOptionChange(group.key, selecteds) } />
+                                <Panel
+                                    group={group.key} 
+                                    {...group} 
+                                    onSelect={ selecteds => this.filterOptionChange(group.key, selecteds) } 
+                                    onRegister={ this.onRegisterPanel.bind(this) }
+                                    onDispose={ this.onDisposePanel.bind(this) }
+                                    onExpand={ this.onPanelExpand.bind(this) }
+                                    onCollapse={ this.onPanelCollapse.bind(this) }
+                                />
                             </div>
                         );
                     })
