@@ -18,3 +18,13 @@ html, body {
         color: themed('color-text-black');
     }
 }
+
+/////// test
+table {
+    border-collapse: collapse;
+}
+  
+table, th, td {
+    border: 1px solid #ccc;
+    position: relative;
+}
