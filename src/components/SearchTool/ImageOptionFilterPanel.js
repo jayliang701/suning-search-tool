@@ -1,12 +1,40 @@
 import React from 'react';
 
-import FilterPanel from './FilterPanel';
+import FilterPanel, { utils } from './FilterPanel';
 import './index.scss';
 
 export default class ImageOptionFilterPanel extends FilterPanel {
 
     constructor(props) {
         super(props);
+    }
+
+    renderConfirmBlock() {
+        const { isEmptySelected, selectOptions } = this.state;
+        const selecteds = utils.toArray(selectOptions);
+        if (selecteds.length < 1) {
+            return super.renderConfirmBlock();
+        }
+        return (
+            <div className="multi-select-confirm-block">
+                <div class="item-selected">
+                    <label>已选条件</label>
+                    <div className="item-selected-items">
+                        {
+                            selecteds.map(item => {
+                                return (
+                                    <div className="item-selected-item" onClick={ () => this.unselectOption(item) }><i></i>{item.name}</div>
+                                );
+                            })
+                        }
+                    </div>
+                </div>
+                <div className="selection-submit item-btns">
+                    <span className={`btn b-sure ${isEmptySelected ? 'disabled' : ''}`} onClick={ () => this.submitMultiSelect() } >确定</span>
+                    <span className="btn b-cancel" onClick={ () => this.cancelMultiSelect() } >取消</span>
+                </div>
+            </div>
+        );
     }
 
     renderOptionBlock() {

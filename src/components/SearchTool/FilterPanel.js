@@ -21,6 +21,10 @@ const toArray = (hash, func) => {
     return arr;
 }
 
+const cloneObject = (obj) => {
+    return JSON.parse(JSON.stringify(obj));
+}
+
 export const SelectionMode = {
     SINGLE: 1,
     MULTI: 2,
@@ -31,6 +35,7 @@ export const utils = {
     toArray,
     isEmpty,
     genLetters,
+    cloneObject,
 };
 
 export const DEFAULT_STATE = {
@@ -46,7 +51,7 @@ export const DEFAULT_STATE = {
 
 export default class FilterPanel extends React.Component {
 
-    state = { ...DEFAULT_STATE };
+    state = cloneObject(DEFAULT_STATE);
 
     constructor(props) {
         super(props);
@@ -59,6 +64,13 @@ export default class FilterPanel extends React.Component {
 
     componentDidMount() {
         this.dataUpdated();
+        const { onRegister, group } = this.props;
+        onRegister && onRegister(this, group);
+    }
+
+    componentWillUnmount() {
+        const { onDispose, group } = this.props;
+        onDispose && onDispose(this, group);
     }
 
     componentWillReceiveProps(newProps) {
@@ -68,7 +80,7 @@ export default class FilterPanel extends React.Component {
         let func;
         if (JSON.stringify(oldData) !== JSON.stringify(newData)) {
             state = {
-                ...DEFAULT_STATE,
+                ...cloneObject(DEFAULT_STATE),
                 data: newData,
                 filteredData: newData,
             };
@@ -86,12 +98,18 @@ export default class FilterPanel extends React.Component {
 
     }
 
-    clearFilter() {
+    clearFilter(stopNotify) {
         const data = this.props.data || [];
-        this.setState({
-            ...DEFAULT_STATE,
+        const state = {
+            ...cloneObject(DEFAULT_STATE),
             data,
             filteredData: data,
+        };
+        console.log(this.props.group, state)
+        this.setState(state, () => {   
+            if (stopNotify) return;
+            const { onCollapse, group } = this.props;
+            onCollapse && onCollapse(this, group);
         });
     }
 
@@ -102,8 +120,8 @@ export default class FilterPanel extends React.Component {
 
             this.clearFilter();
 
-            let { onSelect } = this.props;
-            return onSelect && onSelect([ item ]);
+            let { onSelect, group } = this.props;
+            return onSelect && onSelect([ item ], group);
         }
 
         const key = item.name;
@@ -171,6 +189,11 @@ export default class FilterPanel extends React.Component {
     toggleExpand() {
         this.setState({
             expand: !this.state.expand,
+        }, () => {
+            let { expand } = this.state;
+            const { onExpand, onCollapse, group } = this.props;
+            if (expand) onExpand && onExpand(this, group);
+            else onCollapse && onCollapse(this, group);
         });
     }
 
@@ -179,6 +202,9 @@ export default class FilterPanel extends React.Component {
         this.setState({
             expand: true,
             selectionMode: selectionMode === SelectionMode.MULTI ? SelectionMode.SINGLE : SelectionMode.MULTI,
+        }, () => {
+            const { onExpand, group } = this.props;
+            onExpand && onExpand(this, group);
         });
     }
 
@@ -188,6 +214,9 @@ export default class FilterPanel extends React.Component {
             selectOptions: {},
             isEmptySelected: true,
             selectionMode: SelectionMode.SINGLE,
+        }, () => {
+            const { onCollapse, group } = this.props;
+            onCollapse && onCollapse(this, group);
         });
     }
 
@@ -202,10 +231,23 @@ export default class FilterPanel extends React.Component {
 
         let selecteds = toArray(selectOptions);
         
-        let { onSelect } = this.props;
-        onSelect && onSelect(selecteds);
+        let { onSelect, group } = this.props;
+        onSelect && onSelect(selecteds, group);
+    }
 
+    reset(force) {
+        if (!force && !this.state.expand) return;
+        this.clearFilter(true);
+    }
 
+    renderConfirmBlock() {
+        const { isEmptySelected } = this.state;
+        return (
+            <div className="selection-submit item-btns">
+                <span className={`btn b-sure ${isEmptySelected ? 'disabled' : ''}`} onClick={ () => this.submitMultiSelect() } >确定</span>
+                <span className="btn b-cancel" onClick={ () => this.cancelMultiSelect() } >取消</span>
+            </div>
+        );
     }
 
     renderOptionBlock() {
@@ -222,7 +264,6 @@ export default class FilterPanel extends React.Component {
         const { 
             letters,
             selectedLetter, 
-            isEmptySelected,
             filteredData, 
             keyword, 
             selectionMode,
@@ -254,10 +295,7 @@ export default class FilterPanel extends React.Component {
                 { this.renderOptionBlock() }
                 {
                     isMultiMode ? 
-                    <div className="selection-submit item-btns">
-                        <span className={`btn b-sure ${isEmptySelected ? 'disabled' : ''}`} onClick={ () => this.submitMultiSelect() } >确定</span>
-                        <span className="btn b-cancel" onClick={ () => this.cancelMultiSelect() } >取消</span>
-                    </div> : null
+                    this.renderConfirmBlock() : null
                 }
                 {
                     !isMultiMode ? 
